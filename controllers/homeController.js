@@ -1,11 +1,59 @@
 export const viewHome = (req, res) => {
-    res.json({
-      "product endpoints": {
-        getAllProducts: "https://mis-7l7a.onrender.com/api/products",
-        getProductById: "https://mis-7l7a.onrender.com/api/products/:id",
-        createProduct: "https://mis-7l7a.onrender.com/api/products",
-        updateProduct: "https://mis-7l7a.onrender.com/api/products/:id",
-        deleteProduct: "https://mis-7l7a.onrender.com/api/products/:id",
-      },
-    });
+  const apiDocs = `
+# Market Intelligence System API
+
+## Base URL
+\`https://mis-7l7a.onrender.com/api\`
+
+## Products Endpoints
+
+### Get All Products
+- **Method:** GET
+- **URL:** \`/products\`
+- **Query Parameters:**
+  - \`category\`: Filter by category
+  - \`location\`: Filter by location
+  - \`keyword\`: Search for products by name
+
+**Example Request:**
+\`\`\`
+GET /api/products?category=electronics&location=Accra
+\`\`\`
+
+---
+
+### Get Product by ID
+- **Method:** GET
+- **URL:** \`/products/:id\`
+- **Example:** \`/api/products/65fabc1234567890abcde123\`
+
+---
+
+### Create a New Product
+- **Method:** POST
+- **URL:** \`/products\`
+- **Request Body (JSON):**
 }
+\`\`\`
+
+---
+
+### Update a Product
+- **Method:** PUT
+- **URL:** \`/products/:id\`
+- **Example:** \`/api/products/65fabc1234567890abcde123\`
+- **Request Body (Partial Update Supported):**
+}
+\`\`\`
+
+---
+
+### Delete a Product
+- **Method:** DELETE
+- **URL:** \`/products/:id\`
+- **Example:** \`/api/products/65fabc1234567890abcde123\`
+
+---`;
+
+  res.send(apiDocs);
+};
