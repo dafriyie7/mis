@@ -12,6 +12,7 @@ export const viewHome = (req, res) => {
       pre { background: #f4f4f4; padding: 10px; border-radius: 5px; overflow-x: auto; }
       code { font-family: monospace; color: #d63384; }
       hr { border: 1px solid #ddd; }
+      ul { padding-left: 20px; }
     </style>
   </head>
   <body>
@@ -45,15 +46,15 @@ export const viewHome = (req, res) => {
     <p><strong>URL:</strong> <code>/products</code></p>
     <p><strong>Request Body (JSON):</strong></p>
     <pre><code>{
-  "name": "Laptop",
-  "description": "A high-end gaming laptop",
-  "category": "65fab12345def6789abcd001",
-  "brand": "Dell",
-  "images": ["https://example.com/laptop.jpg"],
-  "location": "65fab56789cdef0123abc002",
-  "priceData": {
-    "amount": 5000,
-    "currency": "GHC"
+  name,
+  description,
+  category,
+  brand,
+  images,
+  location,
+  priceData: {
+    amount,
+    currency
   }
 }</code></pre>
     <hr>
@@ -61,13 +62,17 @@ export const viewHome = (req, res) => {
     <h3>Update a Product</h3>
     <p><strong>Method:</strong> PUT</p>
     <p><strong>URL:</strong> <code>/products/:id</code></p>
-    <p><strong>Example:</strong> <code>/api/products/65fabc1234567890abcde123</code></p>
     <p><strong>Request Body (Partial Update Supported):</strong></p>
     <pre><code>{
-  "name": "Updated Laptop",
-  "priceData": {
-    "amount": 5500,
-    "currency": "GHC"
+  name,
+  description,
+  category,
+  brand,
+  images,
+  location,
+  priceData: {
+    amount,
+    currency
   }
 }</code></pre>
     <hr>
